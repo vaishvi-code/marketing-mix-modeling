@@ -1,0 +1,92 @@
+{
+  "mmm": {
+    "weeks": 156,
+    "train_weeks": 143,
+    "holdout_weeks": 13,
+    "channels": 4,
+    "train_r2": 0.9599560085680303,
+    "holdout_mape_mmm": 1.3879296414135383,
+    "holdout_mape_holt_winters": 3.687749986591898,
+    "holdout_mape_seasonal_naive": 4.89640267841576,
+    "contribution_share_est_pct": {
+      "search": 45.152143202520115,
+      "social": 27.57975382272925,
+      "display": 10.610972911579177,
+      "email": 16.657130063171465
+    },
+    "contribution_share_true_pct": {
+      "search": 37.004610271989726,
+      "social": 28.610974655859216,
+      "display": 25.21924919808264,
+      "email": 9.165165874068418
+    },
+    "contribution_share_mae_pp": 7.819748559816717,
+    "fitted_carryover": {
+      "search": 0.3388306862218089,
+      "social": 0.604524021018285,
+      "display": 0.5569253517458622,
+      "email": 0.266632543934718
+    },
+    "true_carryover": {
+      "search": 0.3,
+      "social": 0.5,
+      "display": 0.65,
+      "email": 0.2
+    }
+  },
+  "robustness_10_seeds": {
+    "seeds": 10,
+    "holdout_mape_mean": 1.9638663442745998,
+    "contribution_share_mae_pp_mean": 9.991282248879882,
+    "contribution_share_mae_pp_median": 7.801032758908995,
+    "contribution_share_mae_pp_max": 33.572252743507164
+  },
+  "geo_lift_did": {
+    "true_effect": 5.987829116109112,
+    "estimate": 5.222070639263451,
+    "ci_low": 3.038284567733836,
+    "ci_high": 7.405856710793065,
+    "ci_covers_truth": true,
+    "p_value": 2.7744673028194015e-06,
+    "relative_lift_pct": 5.215361452781298
+  },
+  "ab_test": {
+    "sample_size_per_arm": 25531,
+    "baseline_rate": 0.04,
+    "target_rate": 0.045,
+    "observed_control": 0.04136148211977596,
+    "observed_treatment": 0.045004112647369865,
+    "p_value": 0.042896511073029456,
+    "empirical_power": 0.7975,
+    "false_positive_rate": 0.0515,
+    "cuped": {
+      "variance_reduction_pct": 78.93190745444069,
+      "ci_width_raw": 0.5179478674492204,
+      "ci_width_cuped": 0.2374291417255654,
+      "ci_width_reduction_pct": 54.15964488958092,
+      "true_effect": 0.4,
+      "estimate_raw": 0.3128643344882729,
+      "estimate_cuped": 0.34076214487610024
+    }
+  },
+  "budget_optimization": {
+    "weekly_budget": 164.8275587084315,
+    "historical_allocation": {
+      "search": 57.05223801238704,
+      "social": 46.282763959630095,
+      "display": 50.233516213122996,
+      "email": 11.259040523291365
+    },
+    "optimized_allocation": {
+      "search": 74.88754276284041,
+      "social": 50.02016717746245,
+      "display": 16.87957148898305,
+      "email": 23.04027727914561
+    },
+    "model_predicted_lift_pct": 5.927537775424607,
+    "true_marketing_revenue_historical": 226.43495558575876,
+    "true_marketing_revenue_optimized": 229.1208025378463,
+    "true_lift_pct": 1.186145021266527,
+    "true_incremental_revenue_per_week": 2.6858469520875303
+  }
+}
