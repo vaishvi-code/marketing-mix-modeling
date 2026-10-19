@@ -6,7 +6,7 @@ An end-to-end project on **simulated** weekly marketing data with a known ground
 pip install -r requirements.txt
 python mmm_budget_optimizer.py      # ~1 min, deterministic (seed 42); writes results.json + 2 figures
 ```
-
+forecast_holdout.png
 ## What it does
 
 | Part | Method | Result (seed 42) |
