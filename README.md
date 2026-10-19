@@ -6,6 +6,7 @@ An end-to-end project on **simulated** weekly marketing data with a known ground
 pip install -r requirements.txt
 python mmm_budget_optimizer.py      # ~1 min, deterministic (seed 42); writes results.json + 2 figures
 ```
+
 ## What it does
 
 | Part | Method | Result (seed 42) |
@@ -14,6 +15,16 @@ python mmm_budget_optimizer.py      # ~1 min, deterministic (seed 42); writes re
 | **Causal analysis** | Geo-lift experiment (40 geos, 12 pre / 6 post weeks) analysed with difference-in-differences, cluster-robust SEs | Estimated lift **5.2%** (95% CI covers the true 6% lift) |
 | **Experimental design** | Power analysis, two-proportion z-test, 2,000-run simulation check, CUPED | **25,531 users/arm**; empirical power 79.8% (target 80%), false-positive rate 5.2% (target 5%); CUPED cuts variance **79%** and CI width 54% |
 | **Budget optimization** | SLSQP, fixed total budget, each channel bounded to 0.25x-3x its historical spend | Reallocation lifts **ground-truth** marketing revenue **1.2%** at equal spend |
+
+## Figures
+
+**13-week holdout forecast.** The media mix model (red) tracks actual revenue more closely than the Holt-Winters time-series baseline (blue, dashed).
+
+![13-week holdout forecast: media mix model vs Holt-Winters](forecast_holdout.png)
+
+**Budget reallocation.** The optimizer shifts spend away from display toward search and email at the same total budget.
+
+![Historical vs optimized weekly spend by channel](budget_allocation.png)
 
 ## Honest limitations (read before quoting numbers)
 
